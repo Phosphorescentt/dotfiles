@@ -171,8 +171,12 @@ local config = {
       "pyright"
     },
     -- add to the server on_attach function
-    -- on_attach = function(client, bufnr)
-    -- end,
+    on_attach = function(client, bufnr)
+      local bufopts = { noremap=true, silent=true, buffer=buffnr }
+
+      vim.keymap.set('n', '<leader>lq', vim.lsp.buf.definition, bufopts)
+      vim.keymap.set('n', '<leader>lQ', vim.lsp.buf.declaration, bufopts)
+    end,
 
     -- override the lsp installer server-registration function
     -- server_registration = function(server, opts)
