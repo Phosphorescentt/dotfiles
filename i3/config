@@ -194,7 +194,7 @@ bindsym $mod+r mode "resize"
 # Start polybar
 # exec_always killall polybar
 # exec_always polybar example -c $HOME/.config/polybar/config 
-# exec_always $HOME/.config/polybar/launch.sh
+exec_always $HOME/.config/polybar/launch.sh
 
 # Set up gaps
 for_window [class=".*"] border pixel 3
